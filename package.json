@@ -1,0 +1,17 @@
+{
+  "name": "CAS-FEE_Project1",
+  "version": "0.0.1",
+  "description": "1 Projektarbeit HSR CAS FEE 2017",
+  "author": "Reto Weber",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RetoWeberHSR/CAS-FEE_Project1.git"
+  },
+  "dependencies": {
+    "serve": "6.1.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
