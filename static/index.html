@@ -2,10 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Note Pro</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheetWhite.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
+    <header class="buttonRegion">
+        <a class="button" href="newNoteEntry.html">Create new Note</a>
+        <select id="stypleBox" class="button">
+            <option selected value="bw">BlockWhite-Style</option>
+        </select>
+        <input type="button" class="sortbutton" value="By finish date">
+        <input type="button" class="sortbutton" value="By created date">
+        <input type="button" class="sortbutton" value="By importance">
+        <input type="button" class="selectbutton" value="Show finished">
+    </header>
+    <main>
+        <div id="entryList">
+            <section class="entryInList">
+                <input type="text" readonly name="noteDue">
+                <input type="text" readonly name="noteTitle">
+                <input type="checkbox" name="noteFinished"><label>Finished</label>
+                <input type="textarea" readonly name="noteDescription">
+                <button class="editbutton" onclick="editEntry()">Edit</button>
+            </section>
+        </div>
+    </main>
 
+
+
+    <!-- for test  reason with attribute -->
+    <a href="#">test</a>
+
+    <java src="js/index.js"></java>
+    <java src="js/main.js"></java>
 </body>
 </html>

@@ -1,0 +1,18 @@
+.buttonRegion{
+    display: flex;
+    flex-flow: column;
+    flex: 1 1;
+    width: 100%;
+}
+
+#styleBox{
+    flex: 2;
+    justify-content: flex-end;
+}
+
+
+
+/* for Test reason */
+[href="#"]{
+    text-decoration: line-through;
+}

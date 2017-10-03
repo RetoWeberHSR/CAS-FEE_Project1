@@ -1,0 +1,12 @@
+.newEntry{
+    display: flex;
+    flex: 420px;
+
+}
+
+label {
+ flex: 220px;
+}
+input {
+ flex: 200px;
+}

@@ -1,0 +1,37 @@
+/* contains general project styles */
+
+.button .sortbutton .selectbutton {
+    color: midnightblue;
+    font-style: normal;
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 8px;
+    padding: 2px 4px;
+    border: 2px solid darkgreen;
+}
+
+.editbutton {
+    color: midnightblue;
+    font-style: normal;
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 8px;
+    padding: 12px 12px;
+    border: 2px solid darkgreen;
+}
+
+body {
+    background-color: #ccfb28;
+    color: #7508ff;
+}
+
+a{
+    text-decoration: none;
+}
+
+select{
+    border-radius: 8px;
+    padding: 2px 4px;
+    border: 2px solid darkgreen;
+    color: inherit;
+}
