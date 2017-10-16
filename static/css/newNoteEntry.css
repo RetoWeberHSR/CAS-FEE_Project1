@@ -1,12 +1,32 @@
-.newEntry{
+.newEntry {
     display: flex;
-    flex: 420px;
+    flex: 2;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
 
+}
+
+.buttonNewEntry {
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    max-width: 500px;
+    margin: auto;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    width: 540px;
 }
 
 label {
- flex: 220px;
+    flex: 1;
+    width: 180px;
 }
 input {
- flex: 200px;
+    flex: 1;
+    width: 320px;
 }

@@ -8,17 +8,37 @@
 </head>
 <body>
 <section class="newEntry">
-
-<label>Title</label><input id="title">
+<div>
+    <label>Title</label><input id="title">
+</div>
+    <div>
 <label>Beschreibung</label><input id="discription">
-<label>Wichtigkeit</label><input id="importance">
-<label>Erledigt bis</label><input id="doneUntil">
+</div>
+    <div>
+    <label>Wichtigkeit</label><input id="importance">
+</div>
+    <div>
+    <label>Erledigt bis</label><input id="doneUntil">
+</div>
 </section>
 <section class="buttonNewEntry">
-<button class="saveNewEntry" onclick="save()">Speichern</button>
-<button class="cancelNewEntry" onclick="reset()">Cancel</button>
+<button class="button" id="saveButton">Speichern</button>
+<button class="button" id="cancelButton">Cancel</button>
 </section>
-<java src="js/newNoteEntry.js"></java>
-<java src="js/main.js"></java>
+
+<script src="js/data.js"></script>
+<script src="js/model.js"></script>
+<script src="js/newNoteEntryController.js"></script>
+<script>
+    // bootstrapping
+    window.onload = function () {
+        Controller.bootstrap(
+            datamodel,
+            document
+        );
+        Controller.renderrUI();
+    }
+</script>
+
 </body>
 </html>

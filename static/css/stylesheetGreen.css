@@ -1,13 +1,17 @@
 /* contains general project styles */
 
-.button .sortbutton .selectbutton {
+.button,
+.sortbutton,
+.selectbutton {
     color: midnightblue;
     font-style: normal;
     text-align: center;
     background-color: lightgray;
+    text-decoration: none;
     border-radius: 8px;
     padding: 2px 4px;
     border: 2px solid darkgreen;
+    min-width: 96px
 }
 
 .editbutton {
@@ -18,20 +22,37 @@
     border-radius: 8px;
     padding: 12px 12px;
     border: 2px solid darkgreen;
+    min-width: 88px
+}
+
+input {
+    border-radius: 8px;
+    padding: 2px 4px;
+    border: 2px solid darkgreen;
 }
 
 body {
     background-color: #ccfb28;
     color: #7508ff;
+    width: 84%;
+    max-width: 900px;
+    justify-content: center;
+    margin: auto;
 }
 
-a{
-    text-decoration: none;
+header,
+section,
+main,
+nav,
+aside,
+div{
+    width: 99%;
 }
 
-select{
-    border-radius: 8px;
-    padding: 2px 4px;
-    border: 2px solid darkgreen;
-    color: inherit;
+.span1{
+    flex: 1;
 }
+
+.span2{
+    flex: 2;
+

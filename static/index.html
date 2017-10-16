@@ -3,38 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Note Pro</title>
-    <link rel="stylesheet" type="text/css" href="css/stylesheetWhite.css">
+    <link id="style_link" rel="stylesheet" type="text/css" href="css/stylesheetWhite.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-    <header class="buttonRegion">
-        <a class="button" href="newNoteEntry.html">Create new Note</a>
-        <select id="stypleBox" class="button">
-            <option selected value="bw">BlockWhite-Style</option>
-        </select>
-        <input type="button" class="sortbutton" value="By finish date">
-        <input type="button" class="sortbutton" value="By created date">
-        <input type="button" class="sortbutton" value="By importance">
-        <input type="button" class="selectbutton" value="Show finished">
+    <header class="button_region">
+        <div class="hrow1">
+            <button class="button" id="create_new_note">Create new note</button>
+            <span class="span1"> </span>
+            <select id="style_box" class="button">
+                <option value="white" selected>BlockWhite-Style</option>
+                <option value="green">BlockGreen-Style</option>
+            </select>
+        </div>
+        <div class="hrow2">
+            <button class="sortbutton">By finish date</button>
+            <button class="sortbutton">created date</button>
+            <button class="sortbutton">By importance</button>
+            <button class="selectbutton">Show finished</button>
+        </div>
     </header>
     <main>
-        <div id="entryList">
-            <section class="entryInList">
-                <input type="text" readonly name="noteDue">
-                <input type="text" readonly name="noteTitle">
-                <input type="checkbox" name="noteFinished"><label>Finished</label>
-                <input type="textarea" readonly name="noteDescription">
-                <button class="editbutton" onclick="editEntry()">Edit</button>
-            </section>
-        </div>
+        <section id="entry_list">
+            <details class="entryInList">
+                <input type="number" hidden="true" name="note_key" id="note_key">
+                <input type="text" readonly name="note_due" id="note_due">
+                <input type="text" readonly name="note_title" id="note_title">
+                <input type="checkbox" name="note_finished" id="not_finished"><label id="note_finished_label">Finished</label>
+                <input type="textarea" readonly name="noteDescription" id="note_description">
+                <button class="editbutton" id="editbutton">Edit</button>
+            </details>
+        </section>
     </main>
 
 
 
-    <!-- for test  reason with attribute -->
-    <a href="#">test</a>
+    <script src="js/data.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/indexController.js"></script>
 
-    <java src="js/index.js"></java>
-    <java src="js/main.js"></java>
+    <script>
+        // bootstrapping
+        window.onload = function () {
+            Controller.bootstrap(
+                datamodel,
+                document
+            );
+            Controller.renderrUI();
+        }
+    </script>
+
 </body>
 </html>

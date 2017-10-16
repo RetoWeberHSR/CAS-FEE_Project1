@@ -1,11 +1,14 @@
 /* contains general project styles */
 
-.button .sortbutton .selectbutton {
+.button,
+.sortbutton,
+.selectbutton {
     font-style: normal;
     text-align: center;
     border-radius: 4px;
     padding: 2px 4px;
     border: 1em, solid, black;
+    min-width: 96px
 }
 
 .editbutton {
@@ -14,15 +17,37 @@
     border-radius: 4px;
     padding: 12px 12px;
     border: 1em, solid, black;
+    min-width: 88px
+}
+
+input{
+    border-radius: 4px;
+    padding: 2px 4px;
+    border: 1em, solid, black;
 }
 
 body {
     background-color: whitesmoke;
     color: inherit;
+    width: 84%;
+    max-width: 900px;
+    justify-content: center;
+    margin: auto;
 }
 
-a {
-    text-decoration: none;
-    font-style: italic;
+header,
+section,
+main,
+nav,
+aside,
+div{
+    width: 99%;
 }
 
+.span1{
+    flex: 1;
+}
+
+.span2{
+    flex: 2;
+}

@@ -1,18 +1,25 @@
-.buttonRegion{
+
+.button_region{
     display: flex;
-    flex-flow: column;
-    flex: 1 1;
-    width: 100%;
+    flex-direction: column;
+    flex: 1;
+    width: 88vw;
+}
+
+.hrow1,
+.hrow2 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
 }
 
 #styleBox{
-    flex: 2;
-    justify-content: flex-end;
+    flex: 1;
 }
 
 
 
 /* for Test reason */
-[href="#"]{
+a[href="#"]{
     text-decoration: line-through;
 }
