@@ -3,36 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Note Pro</title>
-    <link id="style_link" rel="stylesheet" type="text/css" href="css/stylesheetWhite.css">
+    <link rel="stylesheet" type="text/css" href="css/basics.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheetWhite.css" id="style_link">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
     <header class="button_region">
         <div class="hrow1">
-            <button class="button" id="create_new_note">Create new note</button>
-            <span class="span1"> </span>
-            <select id="style_box" class="button">
-                <option value="white" selected>BlockWhite-Style</option>
+            <button data-entry_key="new" class="button">Create new note</button>
+            <span></span>
+            <select id="style_box" class="button" value="white">
+                <option value="white">BlockWhite-Style</option>
                 <option value="green">BlockGreen-Style</option>
             </select>
         </div>
         <div class="hrow2">
-            <button class="sortbutton">By finish date</button>
-            <button class="sortbutton">created date</button>
-            <button class="sortbutton">By importance</button>
-            <button class="selectbutton">Show finished</button>
+            <button class="button" data-order_by="finished">By finish date</button>
+            <button class="button" data-order_by="creationdate">created date</button>
+            <button class="button" data-order_by="importance">By importance</button>
+            <button class="button" data-order_by="show_finished">Show finished</button>
         </div>
     </header>
     <main>
         <section id="entry_list">
-            <details class="entryInList">
-                <input type="number" hidden="true" name="note_key" id="note_key">
-                <input type="text" readonly name="note_due" id="note_due">
-                <input type="text" readonly name="note_title" id="note_title">
-                <input type="checkbox" name="note_finished" id="not_finished"><label id="note_finished_label">Finished</label>
-                <input type="textarea" readonly name="noteDescription" id="note_description">
-                <button class="editbutton" id="editbutton">Edit</button>
-            </details>
+
         </section>
     </main>
 
@@ -49,7 +43,6 @@
                 datamodel,
                 document
             );
-            Controller.renderrUI();
         }
     </script>
 

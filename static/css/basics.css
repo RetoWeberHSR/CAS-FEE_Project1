@@ -1,0 +1,33 @@
+/* contains general project styles */
+
+html,
+body {
+    width: 100vm;
+}
+
+body {
+    max-width: 900px;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+header,
+section,
+main,
+nav,
+aside {
+    width: 100%;
+}
+
+span{
+    flex: 0.75;
+}
+
+table{
+    border: none;
+    width: 100%;
+}
+tr,
+td{
+    width: 100%;
+}

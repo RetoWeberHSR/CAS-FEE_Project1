@@ -1,12 +1,14 @@
 "use strict";
 
 class NoteEntry {
-    constructor(key, due, title, desc){
-        this.noteKey = key;
-        this.noteDue = due;
-        this.noteTitle = title;
-        this.noteFinished = false;
-        this.noteDescription = desc;
-    }
-}
+    constructor(key, due, title, importence, finished, description, creation){
+        this.nKey = key;
+        this.nDue = due;
+        this.nTitle = title;
+        this.nImportence = importence;
+        this.nFinished = finished | false;
+        this.nDescription = description;
+        this.nCreationDate = creation | new Date();
 
+    }
+};

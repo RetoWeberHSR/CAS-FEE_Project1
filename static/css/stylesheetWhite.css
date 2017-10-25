@@ -1,53 +1,31 @@
-/* contains general project styles */
+/* contains white style settings */
 
-.button,
-.sortbutton,
-.selectbutton {
+.button {
     font-style: normal;
     text-align: center;
     border-radius: 4px;
-    padding: 2px 4px;
-    border: 1em, solid, black;
-    min-width: 96px
+    padding: 4px 4px;
+    border: 1px solid black;
+    min-width: 96px;
 }
 
 .editbutton {
     font-style: normal;
     text-align: center;
     border-radius: 4px;
-    padding: 12px 12px;
-    border: 1em, solid, black;
-    min-width: 88px
+    padding: 10px 10px;
+    border: 1px solid black;
+    min-width: 88px;
 }
 
-input{
+.inputborder{
     border-radius: 4px;
-    padding: 2px 4px;
-    border: 1em, solid, black;
+    padding: 4px 4px;
+    border: 1px solid black;
 }
 
 body {
     background-color: whitesmoke;
     color: inherit;
-    width: 84%;
-    max-width: 900px;
-    justify-content: center;
-    margin: auto;
 }
 
-header,
-section,
-main,
-nav,
-aside,
-div{
-    width: 99%;
-}
-
-.span1{
-    flex: 1;
-}
-
-.span2{
-    flex: 2;
-}

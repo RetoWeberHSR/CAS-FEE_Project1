@@ -2,29 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Note Pro - New Entry</title>
-    <link rel="stylesheet" type="text/css" href="css/stylesheetWhite.css">
+    <title>Note Pro - Edit Entry</title>
+    <link rel="stylesheet" type="text/css" href="css/basics.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheetWhite.css" id="style_link">
     <link rel="stylesheet" type="text/css" href="css/newNoteEntry.css">
 </head>
 <body>
-<section class="newEntry">
-<div>
-    <label>Title</label><input id="title">
-</div>
-    <div>
-<label>Beschreibung</label><input id="discription">
-</div>
-    <div>
-    <label>Wichtigkeit</label><input id="importance">
-</div>
-    <div>
-    <label>Erledigt bis</label><input id="doneUntil">
-</div>
-</section>
-<section class="buttonNewEntry">
-<button class="button" id="saveButton">Speichern</button>
-<button class="button" id="cancelButton">Cancel</button>
-</section>
+<main class="newEntry">
+    <h2>Notiz erfassen / ändern</h2>
+    <input id="entrykey" value="0" hidden="true">
+    <section class="row">
+        <label>Title</label><input class="inputborder" id="title">
+    </section>
+    <section class="row">
+        <label>Beschreibung</label><textarea class="inputborder" id="description"></textarea>
+    </section>
+    <section class="row">
+        <label>Wichtigkeit</label><input class="inputborder" id="importance">
+    </section>
+    <section class="row">
+        <label>Erledigt bis</label><input class="inputborder" id="done_until">
+    </section>
+    <section class="creation" hidden="true">
+        <label>Erfasst</label><input class="inputborder" id="creation_date">
+    </section>
+</main>
+<aside class="buttonNewEntry">
+    <button class="button" id="saveButton">Speichern</button><br>
+    <button class="button" id="cancelButton">Cancel</button>
+</aside>
 
 <script src="js/data.js"></script>
 <script src="js/model.js"></script>
@@ -36,7 +42,6 @@
             datamodel,
             document
         );
-        Controller.renderrUI();
     }
 </script>
 
