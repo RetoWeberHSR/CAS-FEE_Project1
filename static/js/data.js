@@ -9,6 +9,5 @@ class NoteEntry {
         this.nFinished = finished | false;
         this.nDescription = description;
         this.nCreationDate = creation | new Date();
-
     }
 };

@@ -11,7 +11,7 @@ const Controller = {
             let noteEntries = model.getStoredEntries();
             let entry = getRenderedEntry(view);
             noteEntries.push(entry);
-            localStorage.setItem("noteEntries", JSON.stringify(noteEntries));
+            model.storeEntries(noteEntries);
             window.location.replace("index.html");
         };
         // cancel
@@ -23,10 +23,11 @@ const Controller = {
 
 function getRenderedEntry(view) {
     let entry = new NoteEntry(
-        view.getElementById("noteKey").value,
+        view.getElementById("entrykey").value,
         view.getElementById("done_until").value,
         view.getElementById("title").value,
-        view.getElementById("noteFinished").value,
+        view.getElementById("importance").value,
+        view.getElementById("task_finished").value,
         view.getElementById("description").value,
         view.getElementById("creation_date").value
     );
@@ -35,10 +36,11 @@ function getRenderedEntry(view) {
 
 function renderEntryToUI(view, entry){
     if (entry !== undefined){
-        view.getElementById("noteKey").value = entry.nKey;
+        view.getElementById("entrykey").value = entry.nKey;
         view.getElementById("done_until").value = entry.nDue;
         view.getElementById("title").value = entry.nTitle;
-        view.getElementById("noteFinished").value = entry.nFinished;
+        view.getElementById("importance").value = entry.nImportence;
+        view.getElementById("task_finished").value = entry.nFinished;
         view.getElementById("description").value = entry.nDescription;
         view.getElementById("creation_date").value = entry.nCreationDate;
     }

@@ -12,14 +12,14 @@ const Controller = {
         };
 
         view.body.addEventListener("click", function(event) {
-            if (event.dataset.entry_key) {
-                let noteKey = textStore(event.dataset.entry_key.value);
+            if (event.target.dataset.entry_key) {
+                let noteKey = event.target.dataset.entry_key.value;
                 // load entry to newNoteEntry view for modifing
                 model.storeSessionEntryKey(noteKey);
                 window.location.replace("newNoteEntry.html");
             }
-            if (event.dataset.order_by) {
-                let orderBy = textStore[event.dataset.order_by.value];
+            if (event.target.dataset.order_by) {
+                let orderBy = event.target.dataset.order_by.value;
                 if (orderBy == "finished"){
 
                 }

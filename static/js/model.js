@@ -50,7 +50,7 @@ const datamodel = {
     },
 
     getLastStoredStyleValue: function(){
-        localStorage.getItem("noteAppStyleVal");
+        return localStorage.getItem("noteAppStyleVal");
     }
 };
 
@@ -75,7 +75,9 @@ function _createDataTable(entries){
     df.appendChild(table);
     for (let i = 0; i < entries.length; i++){
         const tableLine = document.createElement("tr");
-        tableLine.innerHTML = createTableEntryRow(entries[i]);
+        const lineContent = document.createElement("td");
+        tableLine.appendChild(lineContent);
+        lineContent.innerHTML = _createTableEntryRow(entries[i]);
         table.appendChild(tableLine);
     }
     return df;

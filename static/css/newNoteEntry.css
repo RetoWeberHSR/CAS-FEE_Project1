@@ -33,7 +33,7 @@ input {
 }
 
 textarea{
-    min-width: 160px;
+    min-width: 320px;
     max-width: 320px;
     width: 320px;
     min-height: 30px;
