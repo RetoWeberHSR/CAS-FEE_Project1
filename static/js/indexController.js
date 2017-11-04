@@ -41,7 +41,8 @@ const Controller = {
 };
 
 function renderUI(view, entries, model){
-    view.getElementById("entry_list").appendChild(model.createDataTable(entries));
+    view.getElementById("notetable").innerHTML=createNoteTable(entries);
+
 }
 
 

@@ -24,19 +24,30 @@
             <button class="button" data-order_by="show_finished">Show finished</button>
         </div>
     </header>
-    <main>
-        <section id="entry_list">
+    <main id="notetable">
 
-        </section>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+        <script id="notetable-template" type="text/x-handlebars-template">
+            {{#each this}}
+            <section class="entry_row">
+                <div class="txtcol">{{this.nDue}}</div><div class="txtcol">{{this.nTitle}}</div>
+                <div class="txtcol">{{this.nImportence}}</div>
+                <lable>finished<input type="checkbox" protected="true" value="{{this.nFinished}}"></lable>
+                    <textarea readonly>{{this.nDescription}}</textarea>
+                <button data-entry_key="{{this.nKey}}" class="editbutton"></button>
+            </section>
+            {{/each}}
+        </script>
+
     </main>
-
-
 
     <script src="js/data.js"></script>
     <script src="js/model.js"></script>
     <script src="js/indexController.js"></script>
 
     <script>
+        const createNoteTable = Handlebars.compile(document.getElementById("notetable-template").innerText);
+
         // bootstrapping
         window.onload = function () {
             Controller.bootstrap(

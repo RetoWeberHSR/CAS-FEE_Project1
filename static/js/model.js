@@ -69,25 +69,6 @@ function _storeEntries(listOfEntries){
     localStorage.setItem("noteAppEntries", JSON.stringify(listOfEntries));
 }
 
-function _createDataTable(entries){
-    let df = document.createDocumentFragment();
-    const table = document.createElement("table");
-    df.appendChild(table);
-    for (let i = 0; i < entries.length; i++){
-        const tableLine = document.createElement("tr");
-        const lineContent = document.createElement("td");
-        tableLine.appendChild(lineContent);
-        lineContent.innerHTML = _createTableEntryRow(entries[i]);
-        table.appendChild(tableLine);
-    }
-    return df;
-}
-
-function _createTableEntryRow(entry){
-    let htmlString = `<td>${entry.nDue}</td><td>${entry.nTitle}</td><td>${entry.nImportence}</td>
-    <td rowspan="2"><button data-entry_key=${entry.nKey} class="editbutton"></button></td></tr><tr>
-    <td>${entry.nFinished}</td><td colspan="2"><textarea readonly>${entry.nDescription}</textarea></td>`;
-}
 
 function _getEntryFromList(searchKey) {
     if (searchKey !== undefined && searchKey > 0){
