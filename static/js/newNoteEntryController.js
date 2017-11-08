@@ -1,7 +1,10 @@
 "use strict";
 
+import { NoteEntry } from './data.js';
+import { datamodel as model } from './model.js';
+
 const Controller = {
-    bootstrap: function (model, view) {
+    bootstrap: function (view) {
         view.getElementById("style_link").setAttribute("href", model.getCSSLink(null));
         let entry = model.loadSessionEntryKey();
         renderEntryToUI(view, entry);
@@ -45,3 +48,5 @@ function renderEntryToUI(view, entry){
         view.getElementById("creation_date").value = entry.nCreationDate;
     }
 }
+
+export { Controller }

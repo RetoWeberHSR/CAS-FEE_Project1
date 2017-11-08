@@ -1,5 +1,7 @@
 "use strict";
 
+import { stylemodel } from './StyleSheetModule.js';
+
 const datamodel = {
 
     getStoredEntries: function() {
@@ -25,32 +27,11 @@ const datamodel = {
 
     getCSSLink: function(styleSelectBoxId){
         // default selection value
-        let selectedValue = "white";
-        let style;
-        if (styleSelectBoxId !== null){
-            selectedValue = styleSelectBoxId.options[styleSelectBoxId.selectedIndex].value;
-        } else {
-            // get previous selected style value if it has already been set.
-            let storedStyle = this.getLastStoredStyleValue();
-            if (storedStyle !== undefined && storedStyle !== null && storedStyle != ""){
-                selectedValue = storedStyle;
-                if (styleSelectBoxId !== null) {
-                    styleSelectBoxId.value = storedStyle;
-                }
-            }
-        }
-        if (selectedValue == "green") {
-            style = "css/stylesheetGreen.css";
-        }
-        if (selectedValue == "white") {
-            style = "css/stylesheetWhite.css";
-        }
-        localStorage.setItem("noteAppStyleVal", selectedValue);
-        return style;
+        return stylemodel.getCSSLink(styleSelectBoxId);
     },
 
-    getLastStoredStyleValue: function(){
-        return localStorage.getItem("noteAppStyleVal");
+    getLastStoredStyleValue: function(styleSelectBoxId){
+        return stylemodel.getStyleValue(styleSelectBoxId);
     }
 };
 
@@ -80,3 +61,5 @@ function _getEntryFromList(searchKey) {
         }
     }
 }
+
+export { datamodel }

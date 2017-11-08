@@ -1,11 +1,12 @@
 "use strict";
 
+import { datamodel as model } from './model.js';
+
+
 const Controller = {
-    bootstrap: function (model, view) {
-        let entries = model.getStoredEntries();
+    bootstrap: function (view) {
         view.getElementById("style_link").setAttribute("href", model.getCSSLink(null));
-        let styleValue = model.getLastStoredStyleValue();
-        view.getElementById("style_box").setAttribute("value", styleValue);
+        model.getLastStoredStyleValue(view.getElementById("style_box"));
 
         view.getElementById("style_box").onchange = function() {
             view.getElementById("style_link").setAttribute("href", model.getCSSLink(view.getElementById("style_box")));
@@ -35,14 +36,12 @@ const Controller = {
             }
         });
 
-        renderUI(view, entries, model)
     },
 
+    getStoredEntries: function () {
+         return model.getStoredEntries();
+    }
 };
 
-function renderUI(view, entries, model){
-    view.getElementById("notetable").innerHTML=createNoteTable(entries);
-
-}
-
+export  { Controller }
 

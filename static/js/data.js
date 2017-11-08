@@ -11,3 +11,5 @@ class NoteEntry {
         this.nCreationDate = creation | new Date();
     }
 };
+
+export  { NoteEntry }

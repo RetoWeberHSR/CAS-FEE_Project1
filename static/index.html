@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Note Pro</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/basics.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheetWhite.css" id="style_link">
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -32,28 +33,35 @@
             <section class="entry_row">
                 <div class="txtcol">{{this.nDue}}</div><div class="txtcol">{{this.nTitle}}</div>
                 <div class="txtcol">{{this.nImportence}}</div>
-                <lable>finished<input type="checkbox" protected="true" value="{{this.nFinished}}"></lable>
+                <label>finished<input type="checkbox" protected="true" value="{{this.nFinished}}"></label>
                     <textarea readonly>{{this.nDescription}}</textarea>
-                <button data-entry_key="{{this.nKey}}" class="editbutton"></button>
+                <button data-entry_key="{{this.nKey}}" class="editbutton">Edit</button>
             </section>
             {{/each}}
         </script>
 
     </main>
 
-    <script src="js/data.js"></script>
-    <script src="js/model.js"></script>
-    <script src="js/indexController.js"></script>
+    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/model.js"></script>
+    <script type="module" src="js/indexController.js"></script>
+    <script type="module" src="js/StyleSheetModule.js"></script>
 
-    <script>
+    <script type="module">
         const createNoteTable = Handlebars.compile(document.getElementById("notetable-template").innerText);
+
+        import { Controller } from './js/indexController.js';
 
         // bootstrapping
         window.onload = function () {
             Controller.bootstrap(
-                datamodel,
                 document
             );
+            renderUI();
+        }
+
+        function renderUI(){
+            document.getElementById("notetable").innerHTML=createNoteTable(Controller.getStoredEntries());
         }
     </script>
 
