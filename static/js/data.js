@@ -8,7 +8,7 @@ class NoteEntry {
         this.nImportence = importence;
         this.nFinished = finished | false;
         this.nDescription = description;
-        this.nCreationDate = creation | new Date();
+        this.nCreationDate = creation | JSON.stringify(new Date());
     }
 };
 

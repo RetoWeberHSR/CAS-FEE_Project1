@@ -13,7 +13,10 @@ const Controller = {
         view.getElementById("saveButton").onclick = function () {
             let noteEntries = model.getStoredEntries();
             let entry = getRenderedEntry(view);
-            noteEntries.push(entry);
+            if (entry.nKey == 0){
+                entry.nKey = noteEntries.length;
+                noteEntries.push(entry);
+            }
             model.storeEntries(noteEntries);
             window.location.replace("index.html");
         };

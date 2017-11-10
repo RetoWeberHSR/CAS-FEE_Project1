@@ -52,8 +52,9 @@ function _storeEntries(listOfEntries){
 
 
 function _getEntryFromList(searchKey) {
+    let noteEntries = _getStoredEntries();
     if (searchKey !== undefined && searchKey > 0){
-        for (let i = 0; i < noteEntries.lenth; i++){
+        for (let i = 0; i < noteEntries.length; i++){
             let entryKey = noteEntries[i].nKey;
             if (searchKey == entryKey){
                 return noteEntries[i];

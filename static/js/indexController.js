@@ -14,7 +14,7 @@ const Controller = {
 
         view.body.addEventListener("click", function(event) {
             if (event.target.dataset.entry_key) {
-                let noteKey = event.target.dataset.entry_key.value;
+                let noteKey = event.target.dataset.entry_key;
                 // load entry to newNoteEntry view for modifing
                 model.storeSessionEntryKey(noteKey);
                 window.location.replace("newNoteEntry.html");

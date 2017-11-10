@@ -22,14 +22,8 @@ function _getCSSLink(styleSelectBoxId){
         // get previous selected style value if it has already been set.
         selectedValue = _getLastSelectedStyleValueAndSetItToSelectBox(styleSelectBoxId);
     }
-    if (selectedValue == 'green') {
-        style = 'css/stylesheetGreen.css';
-    }
-    if (selectedValue == 'white') {
-        style = 'css/stylesheetWhite.css';
-    }
     _storeStyleValue(selectedValue);
-    return style;
+    return _convertSelectionValueToStyleLink(selectedValue);
 }
 
 function _storeStyleValue(styleValue){
@@ -38,6 +32,17 @@ function _storeStyleValue(styleValue){
 
 function _getLastStoredStyleValue(){
     return localStorage.getItem(noteAppStyleStoreVal);
+}
+
+function _convertSelectionValueToStyleLink(selectedValue){
+    let style;
+    if (selectedValue == 'green') {
+        style = 'css/stylesheetGreen.css';
+    }
+    if (selectedValue == 'white') {
+        style = 'css/stylesheetWhite.css';
+    }
+    return style;
 }
 
 function _getLastSelectedStyleValueAndSetItToSelectBox(styleBoxId){
