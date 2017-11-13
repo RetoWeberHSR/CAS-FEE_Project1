@@ -35,14 +35,14 @@
                 <div class="txtcol">{{this.nImportence}}</div>
                 <label>finished<input type="checkbox" protected="true" value="{{this.nFinished}}"></label>
                     <textarea readonly>{{this.nDescription}}</textarea>
-                <button data-entry_key="{{this.nKey}}" class="editbutton">Edit</button>
+                <button data-entry_key="{{this._id}}" class="editbutton">Edit</button>
             </section>
             {{/each}}
         </script>
 
     </main>
 
-    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/dataNoteEntry.js"></script>
     <script type="module" src="js/model.js"></script>
     <script type="module" src="js/indexController.js"></script>
     <script type="module" src="js/StyleSheetModule.js"></script>

@@ -16,6 +16,10 @@ const datamodel = {
         _storeEntries(listOfEntries);
     },
 
+    storeEntry: function(noteEntry) {
+        _storeEntry(noteEntry);
+    },
+
     loadSessionEntryKey: function() {
         let entryKey = sessionStorage.getItem("noteAppEntryKey");
         return _getEntryFromList(entryKey);
@@ -50,12 +54,22 @@ function _storeEntries(listOfEntries){
     localStorage.setItem("noteAppEntries", JSON.stringify(listOfEntries));
 }
 
+function _storeEntry(noteEntry){
+    // send entry to the server
+    fetch('http:/127.0.0.1.3201/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(noteEntry)
+    }).then(function(res) {
+        console.log(res);
+        });
+}
 
 function _getEntryFromList(searchKey) {
     let noteEntries = _getStoredEntries();
     if (searchKey !== undefined && searchKey > 0){
         for (let i = 0; i < noteEntries.length; i++){
-            let entryKey = noteEntries[i].nKey;
+            let entryKey = noteEntries[i]._id;
             if (searchKey == entryKey){
                 return noteEntries[i];
             }

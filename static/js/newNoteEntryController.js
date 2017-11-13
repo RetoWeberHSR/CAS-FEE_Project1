@@ -1,7 +1,8 @@
 "use strict";
 
-import { NoteEntry } from './data.js';
 import { datamodel as model } from './model.js';
+import { NoteEntry } from './dataNoteEntry.js';
+
 
 const Controller = {
     bootstrap: function (view) {
@@ -13,9 +14,12 @@ const Controller = {
         view.getElementById("saveButton").onclick = function () {
             let noteEntries = model.getStoredEntries();
             let entry = getRenderedEntry(view);
-            if (entry.nKey == 0){
-                entry.nKey = noteEntries.length;
+            if (entry._id == 0){
+                entry._id = noteEntries.length;
                 noteEntries.push(entry);
+                model.storeEntry(entry);
+            } else {
+                // update
             }
             model.storeEntries(noteEntries);
             window.location.replace("index.html");
@@ -42,7 +46,7 @@ function getRenderedEntry(view) {
 
 function renderEntryToUI(view, entry){
     if (entry !== undefined){
-        view.getElementById("entrykey").value = entry.nKey;
+        view.getElementById("entrykey").value = entry._id;
         view.getElementById("done_until").value = entry.nDue;
         view.getElementById("title").value = entry.nTitle;
         view.getElementById("importance").value = entry.nImportence;

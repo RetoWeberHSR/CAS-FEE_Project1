@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "CAS-Fee_Project1 Server implementation, datastore with rest access",
+  "main": "index.js",
+  "scripts": {
+    "start": "note index.js"
+  },
+  "author": "Reto Weber",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "nedb": "^1.8.0"
+  }
+}

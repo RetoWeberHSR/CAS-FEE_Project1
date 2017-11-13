@@ -2,7 +2,7 @@
 
 class NoteEntry {
     constructor(key, due, title, importence, finished, description, creation){
-        this.nKey = key;
+        this._id = key;
         this.nDue = due;
         this.nTitle = title;
         this.nImportence = importence;

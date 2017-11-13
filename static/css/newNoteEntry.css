@@ -1,26 +1,27 @@
-.newEntry {
+main {
     display: flex;
     flex: 3;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 520px;
     margin: auto;
-
+    justify-content: center;
 }
 
-.buttonNewEntry {
+aside.buttonsNewEntry {
     display: flex;
     flex: 3;
     flex-direction: row;
-    width: 500px;
-    max-width: 500px;
-    margin: auto;
+    width: 520px;
+    max-width: 520px;
+    margin: 0px auto;
+    justify-content: center;
 }
 
 section {
     display: flex;
     flex-direction: row;
     flex: 3;
-    width: 500px;
+    width: 520px;
 }
 
 label {
@@ -29,22 +30,22 @@ label {
 }
 input {
     flex: 2;
-    width: 320px;
+    width: 340px;
 }
 
 textarea{
-    min-width: 320px;
-    max-width: 320px;
-    width: 320px;
+    min-width: 340px;
+    max-width: 340px;
+    width: 340px;
     min-height: 30px;
     max-height: 50px;
     height: 36px;
-    scroll-padding-left: 4px ;
+    scroll-padding-right: 4px ;
     flex: 2;
 }
 
 #saveButton{
-    width: 500px;
+    width: 100%;
     flex: 3;
 }
 
@@ -53,5 +54,6 @@ textarea{
 }
 
 section.row{
-    padding-bottom: 8px;
+    margin: 2px 0px;
+    padding: 4px 0px;
 }
